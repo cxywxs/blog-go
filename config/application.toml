@@ -1,0 +1,9 @@
+#This file as Application struct
+
+#this block as Databases struct
+[Databases]
+server = "127.0.0.1"
+port = "3306"
+root = "root"
+password = "123123"
+database = "test"
