@@ -26,6 +26,8 @@ func main() {
 	//验证token post
 	app.Post("/gettoken", controller.VerifyToken)
 
+	app.Post("/signup", controller.SignUpController)
+
 	//启动端口为8085的blog-go项目服务
 	app.Run(iris.Addr(":8085"))
 }
