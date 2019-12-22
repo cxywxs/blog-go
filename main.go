@@ -28,6 +28,12 @@ func main() {
 
 	app.Post("/signup", controller.SignUpController)
 
+	app.Post("/writeblog", controller.WriteBlogController)
+
+	app.Get("/timesort", controller.GetBlogTimeSortController)
+
+	app.Get("readnumsort", controller.GetblogReadNumsortController)
+
 	//启动端口为8085的blog-go项目服务
 	app.Run(iris.Addr(":8085"))
 }
