@@ -19,13 +19,22 @@ func WriteBlogController(ctx iris.Context) {
 	article.Time = tools.GetTime()
 	article.Readnum = 0
 	dao.InsertArticle(article)
-	ctx.Writef(tools.JsonSendOkString("博客插入完成"))
+	_, err = ctx.Writef(tools.JsonSendOkString("博客插入完成"))
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func GetBlogTimeSortController(ctx iris.Context) {
-	ctx.Writef(tools.JsonSendOkStruct(dao.GetArticleSort("time")))
+	_, err := ctx.Writef(tools.JsonSendOkStruct(dao.GetArticleSort("time")))
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func GetblogReadNumsortController(ctx iris.Context) {
-	ctx.Writef(tools.JsonSendOkStruct(dao.GetArticleSort("readnum")))
+	_, err := ctx.Writef(tools.JsonSendOkStruct(dao.GetArticleSort("readnum")))
+	if err != nil {
+		log.Println(err)
+	}
 }

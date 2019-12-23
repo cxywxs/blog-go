@@ -25,15 +25,16 @@ func main() {
 	app.Post("/login", controller.LoginController)
 	//验证token post
 	app.Post("/gettoken", controller.VerifyToken)
-
+	//注册
 	app.Post("/signup", controller.SignUpController)
-
+	//写入博客内容
 	app.Post("/writeblog", controller.WriteBlogController)
-
+	//时间排序
 	app.Get("/timesort", controller.GetBlogTimeSortController)
-
+	//阅读量排序排序
 	app.Get("readnumsort", controller.GetblogReadNumsortController)
+	//更新博客
 
 	//启动端口为8085的blog-go项目服务
-	app.Run(iris.Addr(":8085"))
+	_ = app.Run(iris.Addr(":8085"))
 }

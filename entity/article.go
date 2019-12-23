@@ -12,15 +12,17 @@ type Article struct {
 	Content   string
 }
 
-const Equaled = "$eq"
-const Unequal = "$ne"
-const Greater = "$gt"
-const Lesser = "$lt"
-const GreaterEqual = "$gte"
-const LesserEqual = "$lte"
-const Innet = "$in"
-const Anded = "$and"
-const Ored = "$or"
+const (
+	Equaled      = "$eq"
+	Unequal      = "$ne"
+	Greater      = "$gt"
+	Lesser       = "$lt"
+	GreaterEqual = "$gte"
+	LesserEqual  = "$lte"
+	Innet        = "$in"
+	Anded        = "$and"
+	Ored         = "$or"
+)
 
 type SelectCondition struct {
 	Field string
