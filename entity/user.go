@@ -1,7 +1,11 @@
 package entity
 
 type IrisUser struct {
-	Id       int
-	Username string
-	Password string
+	Id       string `json:"id"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type Token struct {
+	Tokenstring string `json:"tokenstring"`
 }

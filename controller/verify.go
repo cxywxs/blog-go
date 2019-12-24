@@ -1,18 +1,22 @@
 package controller
 
 import (
+	"blog-go/entity"
 	"blog-go/tools"
+	"encoding/json"
 	"github.com/kataras/iris/v12"
 	"log"
 )
 
 //验证token是否通过
 func VerifyToken(ctx iris.Context) {
-	token, err := ctx.GetBody()
+	body, err := ctx.GetBody()
 	if err != nil {
 		log.Println(err)
 	}
-	isVerify := tools.ValidToken(string(token))
+	token := entity.Token{}
+	_ = json.Unmarshal(body, &token)
+	isVerify := tools.ValidToken(token.Tokenstring)
 	if isVerify == true {
 
 		_, err = ctx.Writef(tools.JsonSendOkString("验证成功"))

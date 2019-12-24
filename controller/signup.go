@@ -16,6 +16,7 @@ func SignUpController(ctx iris.Context) {
 	}
 	user := entity.IrisUser{}
 	_ = json.Unmarshal(body, &user)
+	user.Id = tools.CreateUuid()
 	result := service.SignUpService(user)
 	_, err = ctx.Writef(tools.JsonSendOkString(result))
 	if err != nil {
