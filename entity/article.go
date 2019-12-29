@@ -1,15 +1,14 @@
 package entity
 
 type Article struct {
-	Articleid string `json:"articleid"`
-	Type1     string `json:"type1"`
-	Type2     string `json:"type2"`
-	Title     string `json:"title"`
-	Userid    string `json:"userid"`
-	Username  string `json:"username"`
-	Time      string `json:"time"`
-	Readnum   int    `json:"readnum"`
-	Content   string `json:"content"`
+	Articleid string   `json:"articleid"`
+	Type      []string `json:"type"`
+	Title     string   `json:"title"`
+	Userid    string   `json:"userid"`
+	Username  string   `json:"username"`
+	Time      string   `json:"time"`
+	Readnum   int      `json:"readnum"`
+	Content   string   `json:"content"`
 }
 
 const (
